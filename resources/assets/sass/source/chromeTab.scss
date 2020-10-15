@@ -1,0 +1,86 @@
+.chrome-tabs {
+  background: #d4d4d2;
+  height: 35px;
+}
+
+.chrome-tabs ul{
+  margin: 0;
+  list-style-type : none;
+  line-height : 35px;
+  max-height: 35px;
+  overflow: hidden;
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom: unset;
+}
+
+.chrome-tabs> ul > li.active > a{
+  z-index: 2;
+  background: #fff;
+}
+
+.chrome-tabs > ul > li.active:before > a{
+  border-color : transparent;
+}
+
+
+.chrome-tabs > ul > li.active:after > a{
+  border-color : transparent;
+}
+
+.chrome-tabs > ul > li{
+  float : right;
+}
+
+.chrome-tabs > ul > li > a{
+  float : left;
+  margin : 5px -10px 0;
+  border-top-right-radius: 25px 170px;
+  border-top-left-radius: 20px 90px;
+  padding: 0 50px 0 25px;
+  height: 170px;
+  background: #ddd;
+  position : relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,.5);
+  max-width : 200px;
+}
+.chrome-tabs > ul > li > a:hover,
+.chrome-tabs > ul > li > a:active,
+.chrome-tabs > ul > li > a:focus{
+  color: #1b1e21;
+  background: #ffffff;
+}
+.chrome-tabs > ul > li > a:before, .chrome-tabs > ul > li > a:after{
+  content : '';
+  background : transparent;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  border-width: 10px;
+  top: 0px;
+  border-style : solid;
+  position : absolute;
+  border: unset;
+}
+.chrome-tab-close{
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 20px;
+  border-top-right-radius: 25px 170px;
+  border-bottom-right-radius: 20px 90px;
+}
+.reply-type{
+  padding: 10px;
+  cursor: pointer;
+}
+.reply-active{
+  color: #4c8ccf;
+  border-bottom: 2px solid #4c8ccf;
+}
+.reply-type input{ display: none; }
+.chrome-tabs > ul > li.add-tab > a{
+  background: unset;
+  box-shadow: unset;
+}

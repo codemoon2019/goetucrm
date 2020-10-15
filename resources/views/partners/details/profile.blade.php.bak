@@ -1,0 +1,418 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Partners : Company
+                <!-- <small>Dito tayo magpapasok ng different pages</small> -->
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Partners</a></li>
+                <li class="active">Company</li>
+                <li class="active">Apple Inc.</li>
+            </ol>
+            <div class="dotted-hr"></div>
+        </section>
+        <!-- Main content -->
+        <section class="content container-fluid">
+            <div class="col-md-12 secondary-header">
+                <h3>Apple Inc.</h3>
+                <a href="{{ URL::previous() }}" class="btn btn-default pull-right mt-minus-40">< Back to Partners</a>
+            </div>
+            <div class="nav-tabs-custom">
+                <ul class="tabs-rectangular">
+                    <li><a href="{{ url('partners/details/dashboard') }}">Dashboard</a></li>
+                    <li class="active"><a href="{{ url('partners/details/profile') }}">Profile</a></li>
+                    <li><a href="{{ url('partners/details/products') }}">Products</a></li>
+                    <li><a href="{{ url('partners/details/agents') }}">Agents</a></li>
+                    <li><a href="{{ url('partners/details/merchants') }}">Merchants</a></li>
+                    <li><a href="{{ url('partners/details/viewTicket') }}">View Ticket</a></li>
+                    <li><a href="{{ url('partners/details/billing') }}">Billing</a></li>
+                </ul>
+                <!-- Tabs within a box -->
+                <ul class="nav nav-tabs ui-sortable-handle secondary-tabs">
+                    <li class="active"><a href="#company-info" data-toggle="tab" aria-expanded="true">Company Information</a></li>
+                    <li class=""><a href="#contact-list" data-toggle="tab" aria-expanded="false">Contact List</a></li>
+                    <li class=""><a href="#attachments" data-toggle="tab" aria-expanded="false">Attachments</a></li>
+                    <li class=""><a href="#payment-gateway" data-toggle="tab" aria-expanded="false">Payment Gateway</a></li>
+                </ul>
+                <div class="tab-content no-padding">
+                    <div class="tab-pane active" id="company-info">
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title">Personal Information</h3>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="legalName">ISO/Affiliate Name (Legal Name):<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="legalName" id="legalName" value="" placeholder="Enter Legal Name"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="dba">DBA:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="dba" id="dba" value="" placeholder="Enter DBA"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="referenceId">Credit Card Reference ID:</label>
+                                    <input type="text" class="form-control" name="referenceId" id="referenceId" value="" placeholder="Enter Reference ID"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="ownership">Ownership:</label>
+                                    <select name="ownership" id="ownership" class="form-control">
+                                        <option value="1">Limited Liability</option>
+                                        <option value="2">Partnership</option>
+                                        <option value="3">Private Corp.</option>
+                                        <option value="4">Sole Proprietorship</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="ein">EIN:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="ein" id="ein" value="" placeholder="Enter SSN/EIN"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="dateOpened">Date when business was opened:</label>
+                                    <input type="text" class="form-control" name="dateOpened" id="dateOpened" value="" placeholder="mm/yyyy"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="website">Website:</label>
+                                    <input type="text" class="form-control" name="website" id="website" value="" placeholder="Enter Website"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title">Personal Contact Information</h3>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="businessPhone1">Business Phone 1:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="businessPhone1" id="businessPhone1" value="" placeholder="Enter Business Phone 1"/>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="extension1">Extension:</label>
+                                    <input type="text" class="form-control" name="extension1" id="extension1" value="" placeholder="Ext"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fax">Fax:</label>
+                                    <input type="text" class="form-control" name="fax" id="fax" value="" placeholder="Enter Fax"/>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="businessPhone2">Business Phone 2:</label>
+                                    <input type="text" class="form-control" name="businessPhone2" id="businessPhone2" value="" placeholder="Enter Business Phone 2"/>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="extension2">Extension:</label>
+                                    <input type="text" class="form-control" name="extension2" id="extension2" value="" placeholder="Ext"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email(must be valid):<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="email" id="email" value="" placeholder="Enter Email"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title">Business Address</h3>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="businessAddress1">Business Address 1:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="businessAddress1" id="businessAddress1" value="" placeholder="Enter Address"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="businessAddress2">Business Address 2:</label>
+                                    <input type="text" class="form-control" name="businessAddress2" id="businessAddress2" value="" placeholder="Enter Address"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="city">City:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="city" id="city" value="" placeholder="Enter City"/>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="state">State:<span class="required">*</span></label>
+                                    <select name="state" id="state" class="form-control">
+                                        <option value="1">AK</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="zip">Zip:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="zip" id="zip" value="" placeholder="Ext"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="country">Country:<span class="required">*</span></label>
+                                    <select name="country" id="country" class="form-control">
+                                        <option value="1">United States</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title pull-left">Mailing Address</h3>
+                                <div class="pull-right">
+                                    <input type="checkbox" name="businessAddress" id="businessAddress"> Same as Mailing Address
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="mailingAddress1">Mailing Address 1:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="mailingAddress1" id="mailingAddress1" value="" placeholder="Enter Mailing Address 1"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="mailingAddress2">Mailing Address 2:</label>
+                                    <input type="text" class="form-control" name="mailingAddress2" id="mailingAddress2" value="" placeholder="Enter Mailing Address 2"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="mailingCity">City:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="mailingCity" id="mailingCity" value="" placeholder="Enter City"/>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="mailingState">State:<span class="required">*</span></label>
+                                    <select name="mailingState" id="mailingState" class="form-control">
+                                        <option value="1">AK</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    <label for="mailingZip">Zip:<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="mailingZip" id="mailingZip" value="" placeholder="Ext"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="mailingCountry">Country:<span class="required">*</span></label>
+                                    <select name="mailingCountry" id="mailingCountry" class="form-control">
+                                        <option value="1">United States</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="contact-list">
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title">Contact List</h3>
+                                <span class="pull-right mt-minus-40">
+                                    <a href="#" class="btn btn-success btn-sm">Create Contact</a>
+                                </span>
+                            </div>
+                            <table class="table datatables table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="20%">Lastname</th>
+                                    <th width="25%">Firstname</th>
+                                    <th width="10%">Mobile Number</th>
+                                    <th width="20%">Attachments</th>
+                                    <th width="20%">Payment Gateway</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="attachments">
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title">Attachments</h3>
+                                <span class="pull-right mt-minus-40">
+                                    <a href="#" class="btn btn-success btn-sm">Create Contact</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="box-group" id="accordion">
+                                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                                <div class="panel box box-primary">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title"> CORPORATION CERTIFICATE </h4>
+                                        <div class="box-tools pull-right">
+                                            <a href="#collapseOne" class="btn-circle btn-circle-collapse" data-toggle="collapse" data-parent="#accordion">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in show">
+                                        <div class="box-body">
+                                            <table class="table datatables table-condense table-striped">
+                                                <thead>
+                                                <td>Document Name</td>
+                                                <td>Image</td>
+                                                <td>Created By</td>
+                                                <td>Created Date</td>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>CORPORATION CERTIFICATE</td>
+                                                    <td><a href="#"><i class="fa fa-file"></i></a></td>
+                                                    <td>$ 1.00</td>
+                                                    <td>Edit | Delete</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="box-footer">
+                                            <a href="#"><i class="fa fa-plus-circle"></i> Add File</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel box box-primary">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title"> CORPORATION TAX ID </h4>
+                                        <div class="box-tools pull-right">
+                                            <a href="#collapseTwo" class="btn-circle btn-circle-collapse" data-toggle="collapse" data-parent="#accordion">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                    </div>
+                                </div>
+                                <div class="panel box box-primary">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title"> VALID ID </h4>
+                                        <div class="box-tools pull-right">
+                                            <a href="#collapseThree" class="btn-circle btn-circle-collapse" data-toggle="collapse" data-parent="#accordion">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse">
+                                        <div class="box-body">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel box box-primary">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title"> VOID CHECK </h4>
+                                        <div class="box-tools pull-right">
+                                            <a href="#collapseFour" class="btn-circle btn-circle-collapse" data-toggle="collapse" data-parent="#accordion">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse">
+                                        <div class="box-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="payment-gateway">
+                        <div class="row">
+                            <div class="row-header">
+                                <h3 class="title">Payment Gateway</h3>
+                                <span class="pull-right mt-minus-40">
+                                    <a href="#" class="btn btn-success btn-sm">Create Payment</a>
+                                </span>
+                            </div>
+                            <table class="table datatables table-condense table-striped">
+                            <thead>
+                                <td>Type</td>
+                                <td>Bank Name</td>
+                                <td>Routing Number</td>
+                                <td>Bank Account Number</td>
+                                <td>Default Payment</td>
+                                <td>Action</td>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>ACH</td>
+                                <td>Chase</td>
+                                <td>12123123</td>
+                                <td>989745699</td>
+                                <td>Yes</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Cash</td>
+                                <td>Bank of America</td>
+                                <td>3475686</td>
+                                <td>23487682</td>
+                                <td>No</td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- /.content -->
+    </div>
+@endsection
+@section('script')
+    <script src="{{ config("app.cdn") . "/js/partners/list.js" . "?v=" . config("app.version") }}"></script>
+@endsection

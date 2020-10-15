@@ -1,0 +1,73 @@
+@import "_variables";
+@import "_style";
+
+.main-header, .navbar {
+    border-bottom: 0px !important;
+}
+
+.main-sidebar {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.content-wrapper {
+    position: relative;
+}
+
+.content-header {
+    background: rgba(255, 255, 255, 1) !important;
+    padding-bottom: 15px;
+}
+
+.content-sub-header {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.content-sub-header .form-essentials {
+    background: rgba(229, 229, 229, 1);
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.content-sub-header .form-essentials .form-group {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.section-link-to-task {
+    background: rgba(229, 229, 229, 0.5);
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.section-link-to-task #previewTaskLink > p {
+    margin-bottom: 5px;
+}
+
+.section-task {
+    width: 100%;
+}
+
+.select2-container .select2-selection--multiple {
+    border-radius: 0px;
+    min-height: 38px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0px !important;
+}
+
+#form-error-department {
+    margin-bottom: 0px !important;
+}
+
+.btn-form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-form-actions > a, button {
+    margin-left: 10px;
+}

@@ -1,0 +1,24 @@
+$colorToDo: #FFD530;
+$colorInProgress: #27AE27;
+$colorPending: #000000;
+$colorClosed: #4C8CCF;
+
+.status-to-do {
+    background-color: $colorToDo;
+    color: #ffffff;
+}
+
+.status-in-progress {
+    background-color: $colorInProgress;
+    color: #ffffff;
+}
+
+.status-pending {
+    background-color: $colorPending;
+    color: #ffffff;
+}
+
+.status-closed {
+    background-color: $colorClosed;
+    color: #ffffff;
+}

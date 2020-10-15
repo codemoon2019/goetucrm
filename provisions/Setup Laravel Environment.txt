@@ -1,0 +1,28 @@
+1.Intall Homestead https://laravel.com/docs/5.5/homestead
+
+1.1 Software Installing :
+   1. Git : https://git-scm.com/download
+   2. Oracel Virtualbox 5.1
+   3. Vagrant 1.9.8
+   4. Phpstorm IDE
+ 
+ 
+Git SSH KEY: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+Upload the ssh public key into bitbucket, so that we can use ssh way to pull our project.
+
+1.2 Installing laravel homestead inside the vagrant
+
+   1. vagrant box add laravel/homestead
+   2. Clone Homestead in root directory ( git clone https://github.com/laravel/homestead.git Homestead )
+   3. Initialize homestead to create yams file bash init.sh ( Mac / linux ) or init.bat ( Windows )
+2. Homestead configuration
+  1. modify the homestead.yaml (C:\Users\Username\Homestead\resources\homestead.yaml)
+  2. Git bash : ~/Homestead: bash init.sh
+  3. vagrant up
+  4. vagrant ssh
+  when you change the homestead.yaml every time, have to "bash init.sh" again, and then "vagrant provision --reload".
+  5. hosts (C:\Windows\System32\drivers\etc) add our domain .
+  
+3. Run our project
+  1. composer install (install our third part libraries).
+  2. npm install / yarn install (install js libraries).If you are runing on Linux system, (--no-bin-links).

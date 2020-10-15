@@ -1,0 +1,74 @@
+@import 'variables';
+
+.ta-log {
+    border-left: 3px solid #000000;
+    padding: 1em;
+}
+
+.ta-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+    
+
+    .ta-item-datetime {
+        font-weight: bolder;
+        padding-bottom: 0.5em;
+    }
+    
+    .ta-item-changes {
+        border: 1px solid #000000;
+        border-radius: 10px;
+        margin: 0 1em;
+        padding: 1em;
+
+                    
+        .ta-item-changes-item {
+            display: flex;
+            flex-direction: column;
+
+            .ta-item-changes-item-value {
+                font-size: 0.8em;
+                margin-bottom: 0.5em;
+            }
+        }
+
+    }
+}
+
+.ta-item-actor {
+    display: flex;
+    padding-bottom: 0.5em;
+
+    .ta-item-actor-image {
+        align-self: center;
+        margin-right: 1em;
+    }
+
+    .ta-item-actor-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .ta-item-actor-name {
+            font-size: 1.2em;
+        }
+        
+        .ta-item-actor-dept {
+            transform: translateY(-5px);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

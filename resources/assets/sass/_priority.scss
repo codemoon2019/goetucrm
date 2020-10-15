@@ -1,0 +1,24 @@
+$colorLowPriority: #fbf3d0;
+$colorMediumPriority: #FFD530;
+$colorHighPriority: #F87E2D;
+$colorUrgentPriority: #E71616;
+
+.priority-low {
+    background-color: $colorLowPriority;
+    color: #000000;
+}
+
+.priority-medium {
+    background-color: $colorMediumPriority;
+    color: #000000;
+}
+
+.priority-high {
+    background-color: $colorHighPriority;
+    color: #ffffff;
+}
+
+.priority-urgent {
+    background-color: $colorUrgentPriority;
+    color: #ffffff;
+}

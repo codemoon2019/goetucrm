@@ -1,0 +1,30 @@
+/*--- MEDIA QUERIES */
+
+@media (max-width: 768px){
+    .navbar-btn-menu-desktop{
+        display:none;
+    }
+    .main-sidebar {
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 768px){
+    .main-header .navbar{
+        min-height: 72px;
+        border-bottom: 5px solid #D4D4D2;
+    }
+    .main-header .sidebar-toggle {
+        padding: 25px 20px;
+    }
+    .navbar-nav>li>a {
+        padding-top: 25px;
+        padding-bottom: 20px;
+    }
+    .logo{
+        display:none !important;
+    }
+    .sidebar-mini.sidebar-collapse .main-sidebar{
+        z-index:1031;
+    }
+}

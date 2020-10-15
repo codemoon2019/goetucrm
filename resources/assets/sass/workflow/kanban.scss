@@ -1,0 +1,74 @@
+@import "../_priority";
+@import "../_status";
+
+.btn-add-subtask {
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.column {
+    background-color: #EFF0F1;
+    border-top-width: 5px;
+    color: #707070;
+}
+
+.column .box-body {
+    min-height: 500px;
+}
+
+.column-to-do {
+    border-top-color: $colorToDo !important;
+}
+
+.column-in-progress {
+    border-top-color: $colorInProgress !important;
+}
+
+.column-pending {
+    border-top-color: $colorPending !important;
+}
+
+.column-closed {
+    border-top-color: $colorClosed !important;
+}
+
+.subtask {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.subtask-dark {
+    background-color: #666666;
+    color: #cccccc;
+    cursor: not-allowed;
+}
+
+.subtask-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.subtask-header img {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.subtask-body {
+    font-size: 0.8rem;
+}
+
+.subtask-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.text-large {
+    font-size: 1.15rem;
+}
+
+.text-small {
+    font-size: 0.85rem
+}
