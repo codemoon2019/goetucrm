@@ -1,0 +1,25 @@
+@import "../_priority";
+@import "../_status";
+
+.recent-activities {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: white;
+    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 0px;
+    z-index: 9999;
+}
+
+.activity {
+    display: flex;
+    align-items: center;
+}
+
+.activity img {
+    border: 1px solid black;
+    border-radius: 50%;
+}

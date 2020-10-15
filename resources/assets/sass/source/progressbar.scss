@@ -1,0 +1,75 @@
+.progressbar {
+  counter-reset: step;
+  position: relative;
+  z-index: 1;
+}
+.progressbar li {
+  list-style-type: none;
+  float: left;
+  //width: 33.33%;
+  position: relative;
+  text-align: center;
+}
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 35px;
+  height: 35px;
+  line-height: 30px;
+  border: 3px solid #ddd;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.progressbar li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ddd;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: #4c8ccf;
+}
+.progressbar li.active:before {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  border-color: #4c8ccf;
+  /*background-color: #4c8ccf;*/
+}
+.progressbar li.active + li:after {
+  background-color: #4c8ccf;
+}
+
+.progressbar .col-sm-1 {
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+.progressbar .col-sm-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+.progressbar .col-sm-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.progressbar .col-sm-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.progressbar .col-sm-5 {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+.progressbar .col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}

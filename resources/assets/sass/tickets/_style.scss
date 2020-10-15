@@ -1,0 +1,97 @@
+@import 'variables';
+
+/**
+ * Images
+ */
+%ticket-img {
+  border: 2px solid $lightColor;
+  border-radius: 50%;
+}
+
+.ticket-img-xs {
+  @extend %ticket-img;
+  box-shadow: 0 0 2.5px $darkColor;
+
+  height: 20px;
+  width: 20px;
+}
+
+.ticket-img-sm {
+  @extend %ticket-img;
+  box-shadow: 0 0 5px $darkColor;
+
+  height: 30px;
+  width: 30px;
+}
+
+.ticket-img-md {
+  @extend %ticket-img;
+  box-shadow: 0 0 7.5px $darkColor;
+
+  height: 40px;
+  width: 40px;
+}
+
+.ticket-img-lg {
+  @extend %ticket-img;
+  box-shadow: 0 0 10px $darkColor;
+
+  height: 50px;
+  width: 50px;
+}
+
+
+/**
+ * Font Weight
+ */
+.ticket-bold {
+  font-weight: bold;
+}
+
+.ticket-black {
+  font-weight: bolder;
+}
+
+
+/**
+ * Overlay
+ */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+  z-index: 2000;
+
+  display: none;
+}
+
+.overlay > div {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/**
+ * Form Validation Errors
+ */
+.form-error {
+  color: red;
+  font-size: 0.8em;
+  padding-top: 3px;
+}
+
+
+.select2 {
+  display: block;
+  width: 100% !important;
+}
+
+

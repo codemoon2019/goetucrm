@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class ReportExportLog extends Model
+{
+    protected $table = 'report_export_logs';
+
+    public function user()
+    {
+        return $this->hasOne("App\\Models\\User", "id", "user_id");
+    }
+
+
+}

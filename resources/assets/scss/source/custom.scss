@@ -1,0 +1,136 @@
+/* CUSTOM TABLE CSS */
+thead {
+    background: #A0A09F;
+    color: #fff;
+}
+
+/* CUSTOM NAVIGATION TABS */
+
+.nav-tabs-custom>.nav-tabs {
+    margin: 0;
+    border-bottom-color: #4c8ccf;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.nav-tabs {
+    border-bottom: 3px solid #4c8ccf;
+}
+
+.nav-tabs-custom>.nav-tabs>li.active {
+    border-top-color: none;
+    background: #4c8ccf;
+}
+
+.nav-tabs-custom>.nav-tabs>li {
+    border-top: 3px solid transparent;
+    margin-bottom: 0px;
+    margin-right: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #F9F9F9;
+}
+.nav-tabs-custom>.nav-tabs>li>a, .nav-tabs-custom>.nav-tabs>li>a:hover {
+    display: block;
+    padding: 10px 30px;
+}
+.nav-tabs-custom>.nav-tabs>li.active>a, .nav-tabs-custom>.nav-tabs>li.active:hover>a {
+    background-color: transparent;
+    color: #fff;
+}
+
+.nav-tabs-custom>.nav-tabs>li.active>a {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+/* SystemUsers */
+.search-sys-usr{
+    width:100%;
+    max-width: 500px !important;
+    display:inline-block !important;     
+}
+
+.system-usr-srch-btn{
+    margin-top:-5px;
+}
+
+/*kung sakali ibalik */
+.logo{
+    display:none !important;
+}
+
+/* form style */
+.row-header{
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.35);
+}
+.row-header .title {
+    color: #4c8ccf;
+    font-size: 24px;
+}
+
+/* Products */
+.new-prd-header{
+    color: #fff;
+    padding: 10px;
+    background: rgba(160, 160, 159, 1);
+    border-bottom: 3px solid rgb(64, 87, 110);
+}
+.new-prd-title{
+    font-size: 24px;
+    margin-bottom: unset;
+}
+.main-prd-details .title{
+    margin-top: 10px;
+    color: #8B0000;
+    display: inline-block;
+}
+.main-prd-details .icon-img{
+    margin-top: -12px;
+    margin-left: 10px;
+}
+.main-prd-details .prd-details label{
+    width: 200px;
+    margin-bottom: 0;
+    display: inline-grid;
+}
+.main-prd-details .prd-details p{
+    max-width: 500px;
+    font-weight: 100;
+    margin-bottom: 0;
+    display: inline-grid;
+}
+
+/* Modal */
+.modal{
+    background: rgba(195, 224, 239, 0.9);
+}
+
+.modal-header .alert{
+    color: #8B0000;
+}
+.modal-body .info-only{
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+.modal-footer .btn-save{
+    background: rgba(131, 156, 53, 1);
+    border: solid rgba(123, 115, 111, 1) 0px;
+    border-radius: 0;
+    cursor: pointer;
+}
+.modal-footer .btn-close{
+    background-color: rgba(139, 0, 0, 1);
+    border: solid rgba(249, 249, 249, 1) 0px;
+    border-radius: 0;
+    cursor: pointer;
+}
+.datepicker table tr td, .datepicker table tr th {
+  background: transparent;
+  color: #000;
+}

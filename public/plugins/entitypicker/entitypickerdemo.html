@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/cupertino/jquery-ui.min.css" rel="stylesheet" />
+		<link href="entitypicker.css" rel="stylesheet" type="text/css" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+		<script src="entitypicker.js" type="text/javascript"></script>
+		<style>
+			.picker { width: 400px; }
+		</style>
+		<script type="text/javascript">
+		$(function() {
+			$(".locationsearch").entitypicker({
+				maxEntities: 3,
+				autocomplete: {
+					autoFocus: true,
+					source: function(request, response) {
+						$.ajax({
+							type: 'GET',
+							url: "http://query.yahooapis.com/v1/public/yql?format=json&q=select%20name%2Cwoeid%2Ccountry%2Cadmin1%20from%20geo.places%20where%20text%3D%22asd%22",
+							dataType: 'jsonp',
+							crossDomain: true,
+							error: function(a,b,c) { alert("Error: " + b + "; " + c); },
+							success: function (data, textStatus) {
+								if (data.query.count > 0) {
+									var dataObj = data.query.count == 1 ? data.query.results : data.query.results.place;
+									response( $.map(dataObj, function(item) {
+										return {
+											value: item.woeid,
+											label: item.name + 
+												(item.admin1 ? (item.admin1.type == 'State' || item.admin1.type == 'Province') ? ', '+item.admin1.content : '' : '')  + 
+												(item.country ? ' (' + item.country.code + ')' : '')
+										};
+									}));
+								} else {
+									response([]);
+								}
+							}
+						});
+					}
+				}
+			});
+			
+			$("#imdbshows").entitypicker({
+				entityValue: function(item) {
+					/* In source:success function we passed in the item to get access to data elements here! */
+					return item.value + "(" + item.entity.year + ")";
+				},
+				autocomplete: {
+					source: function(request, response) {
+						$.ajax({
+							type: 'GET',
+							url: 'http://imdbapi.org/?type=json&plot=none&episode=0&limit=10&yg=0&mt=none&lang=en-US&offset=&aka=simple&release=simple&business=0&tech=0&title=' + request.term,
+							dataType: 'json',
+							crossDomain: true,
+							error: function(a,b,c) { alert("Error: " + b + "; " + c); },
+							success: function (data, textStatus) {
+								if (data && data.length > 0) {
+									response( $.map(data, function(item) {
+										return {
+											value: item.imdb_id, /* set autocomplete parameters */
+											label: item.title,
+											entity: item /* pass item; we can use it in entityValue! */
+										};
+									}));
+								} else {
+									response([]);
+								}
+							}
+						});
+					}
+				}
+			});
+			
+			$(".locationsearch")
+			.on("entityadded", function(e) {
+				eventsContainer = $(this).parent(".demoContainer").find("ul.events");
+				msg = "Added " + e.text + " to '" + e.inputName + "' with value: " + e.value;
+				eventsContainer.append("<li data-value='"+ e.value +"'><span>"+ msg +"</span></li>");
+			})
+			.on("entityremoved", function(e) {
+				eventsContainer = $(this).parent(".demoContainer").find("ul.events");
+				eventsContainer.append("<li>Removed from '"+ e.inputName +"' with value: " + e.value + "</li>");
+				eventsContainer.find("li[data-value='"+e.value+"']").remove();
+			});
+			
+			$("#demoform").submit(function() {
+				$("#formserialize").text($("#demoform").serialize());
+				$("#jsonstringify").text(JSON.stringify($(".picker").entitypicker("getEntities")));
+				return false;
+			});
+		});
+		
+		</script>
+	</head>
+	<body>
+		<h2>A quick and dirty demonstration of the entitypicker plugin.</h2>
+		<h3>Location pickers use Yahoo Query Language, movies from IMDB API.</h3>
+		
+		<form id="demoform">
+			<table>
+				<tr>
+					<th style="border-bottom: 1px solid black">Form Input:</th>
+					<th></th>
+					<th style="border-bottom: 1px solid black">On Form Submit:</th>
+				</tr>
+				<tr>
+					<td>
+						<div class='demoContainer'>
+							<span><strong>Departure Location(s):</strong></span>
+							<div id="depart" class="picker locationsearch" data-max-entities="4"></div>
+							<ul class="events"></ul>
+						</div>
+					</td>
+					<td style="width: 20px">&nbsp;</td>
+					<td style="vertical-align: top">
+						<strong>Entities are submitted as form elements. Here's the post data:</strong>
+						<div id="formserialize"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class='demoContainer'>
+							<span><strong>Arrival Location(s):</strong></span>
+							<div id="arrive" class="picker locationsearch"></div>
+							<ul class="events"></ul>
+						</div>
+					</td>
+					<td>&nbsp;</td>
+					<td style="vertical-align: top">
+						<strong>Entities can be queried out using javascript. This is JSON.stringify:</strong>
+						<div id="jsonstringify"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class='demoContainer'>
+							<span><strong>In Flight Movie(s):</strong></span>
+							<div id="imdbshows" class="picker" data-max-entities="2" data-max-entities-message="You can pick up to 2 movies."></div>
+							<ul class="events"></ul>
+						</div>
+					</td>
+					<td>&nbsp;</td>
+					<td style="vertical-align: top">
+						<strong>The movie picker is using a custom value function for submit.</strong>
+						<div>
+							&nbsp;&nbsp;&nbsp;entityValue: function(item) {<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return item.value + "(" + item.entity.year + ")";<br />
+							&nbsp;&nbsp;&nbsp;}
+						</div>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>

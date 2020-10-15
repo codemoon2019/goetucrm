@@ -1,0 +1,26 @@
+{
+  "yes": "Yes",
+  "no": "No",
+  "created_at": "Created At",
+  "updated_at": "Last Updated",
+  "actions": "Operations",
+  "new": "New",
+  "attach": "Attact",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "deleted": "Deleted",
+  "success": "Success",
+  "deleteTitle": "Are you sure?",
+  "deleteText": "You can not recover the row after delete!",
+  "selectRow": "Please select a row!",
+  "submit": "Submit",
+  "company": {
+    "nav": "Company",
+    "manage": "Company Manage",
+    "list": "Company List",
+    "url": "URL",
+    "logoPath": "Logo Path",
+    "companyName": "Company Name"
+  }
+}
